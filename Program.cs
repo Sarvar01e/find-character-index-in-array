@@ -1,4 +1,6 @@
-﻿namespace find_character_index_in_array
+﻿using System.Xml;
+
+namespace find_character_index_in_array
 {
     internal class Program
     {
@@ -6,29 +8,28 @@
         {
             int[] array = { 1124, 2124, 10, 33456, 4345, 52354, 6345, 73245, 8546, 934, 10 };
 
-            int foundindex;
+            string foundindex;
 
             Console.WriteLine("Enter number witch your wand to know index in array:");
             int number = int.Parse(Console.ReadLine());
 
             foundindex = IndexFinder(array, number);
-            Console.WriteLine("Your number index is:" + foundindex);
+            Console.WriteLine(foundindex);
+   
         }
 
-        static int IndexFinder(int[] array, int findnumber) 
+        static string IndexFinder(int[] array, int findnumber)
         {
-            int index = default;
+            string index = "Your number is out of array";
             for (int i = 0; i < array.Length; i++)
             {
                 
                 if (array[i]==findnumber)
                 {
-                    index = i;
+                    index = "Your number index is:" + i;
+                    break;
                 }
-                else if (array[i]!=findnumber)
-                    Console.WriteLine("This number not in array");
-            }
-                
+            }                
             return index;
         }
     }
