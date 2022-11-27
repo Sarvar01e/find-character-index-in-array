@@ -15,6 +15,8 @@ namespace find_character_index_in_array
 
             foundindex = IndexFinder(array, number);
             Console.WriteLine(foundindex);
+
+            Console.ReadLine();
    
         }
 
